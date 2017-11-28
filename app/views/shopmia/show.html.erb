@@ -1,0 +1,105 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Chain:</strong>
+  <%= @shopmium.chain %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @shopmium.name %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @shopmium.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @shopmium.longitude %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @shopmium.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @shopmium.city %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @shopmium.zip %>
+</p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @shopmium.department %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @shopmium.phone %>
+</p>
+
+<p>
+  <strong>Hours:</strong>
+  <%= @shopmium.hours %>
+</p>
+
+<p>
+  <strong>Store:</strong>
+  <%= @shopmium.store_id %>
+</p>
+
+<p>
+  <strong>Is address computed:</strong>
+  <%= @shopmium.is_address_computed %>
+</p>
+
+<p>
+  <strong>Is location computed:</strong>
+  <%= @shopmium.is_location_computed %>
+</p>
+
+<p>
+  <strong>Key:</strong>
+  <%= @shopmium.key %>
+</p>
+
+<p>
+  <strong>Ignored:</strong>
+  <%= @shopmium.ignored %>
+</p>
+
+<p>
+  <strong>Ignore reason:</strong>
+  <%= @shopmium.ignore_reason %>
+</p>
+
+<p>
+  <strong>Overload chain name:</strong>
+  <%= @shopmium.overload_chain_name %>
+</p>
+
+<p>
+  <strong>Mandatory coords:</strong>
+  <%= @shopmium.mandatory_coords %>
+</p>
+
+<p>
+  <strong>Country code:</strong>
+  <%= @shopmium.country_code %>
+</p>
+
+<h3>Les autres Shopmium proches</h3>
+<% for location in @shopmium.nearbys(10) %>
+    <li><%= link_to location.name, location %> (<%= location.distance.round(2) %> miles)</li>
+<% end %>
+
+<%= link_to 'Edit', edit_shopmium_path(@shopmium) %> |
+<%= link_to 'Back', shopmia_path %>

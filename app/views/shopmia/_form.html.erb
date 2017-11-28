@@ -1,0 +1,112 @@
+<%= form_with(model: shopmium, local: true) do |form| %>
+  <% if shopmium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shopmium.errors.count, "error") %> prohibited this shopmium from being saved:</h2>
+
+      <ul>
+      <% shopmium.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :chain %>
+    <%= form.text_field :chain, id: :shopmium_chain %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :shopmium_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :latitude %>
+    <%= form.text_field :latitude, id: :shopmium_latitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :longitude %>
+    <%= form.text_field :longitude, id: :shopmium_longitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address, id: :shopmium_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city, id: :shopmium_city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zip %>
+    <%= form.number_field :zip, id: :shopmium_zip %>
+  </div>
+
+  <div class="field">
+    <%= form.label :department %>
+    <%= form.text_field :department, id: :shopmium_department %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.number_field :phone, id: :shopmium_phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hours %>
+    <%= form.text_field :hours, id: :shopmium_hours %>
+  </div>
+
+  <div class="field">
+    <%= form.label :store_id %>
+    <%= form.number_field :store_id, id: :shopmium_store_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_address_computed %>
+    <%= form.text_field :is_address_computed, id: :shopmium_is_address_computed %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_location_computed %>
+    <%= form.text_field :is_location_computed, id: :shopmium_is_location_computed %>
+  </div>
+
+  <div class="field">
+    <%= form.label :key %>
+    <%= form.text_field :key, id: :shopmium_key %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ignored %>
+    <%= form.text_field :ignored, id: :shopmium_ignored %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ignore_reason %>
+    <%= form.text_field :ignore_reason, id: :shopmium_ignore_reason %>
+  </div>
+
+  <div class="field">
+    <%= form.label :overload_chain_name %>
+    <%= form.text_field :overload_chain_name, id: :shopmium_overload_chain_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mandatory_coords %>
+    <%= form.text_field :mandatory_coords, id: :shopmium_mandatory_coords %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country_code %>
+    <%= form.text_field :country_code, id: :shopmium_country_code %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

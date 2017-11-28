@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+<h1><%=  link_to "Shopmium", root_path %></h1>
+<p>You're IP is : <%= @ip %> / You're latitude is : <%= request.location.latitude %> /  You're longitude is : <%= request.location.longitude %></p>
+
+<h3>Import</h3>
+<%= form_tag import_shopmia_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Upload" %>
+<% end %>
+
+<%= form_tag shopmia_path, :method => 'get' do %>
+    <%= text_field_tag :search, params[:search], :class => 'form-group' %>
+    <%= submit_tag "Search by name", :class => 'btn btn-default' %>
+<% end %>
+
+
+<div class="table-responsive">
+<table class="table">
+  <thead>
+    <tr>
+      <th>Chain</th>
+      <th><%= link_to 'Name', :sort =>"name" %></th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Address</th>
+      <th><%= link_to 'City', :sort =>"city" %></th>
+      <th>Zip</th>
+      <th>Department</th>
+      <th>Phone</th>
+      <th><%= link_to 'Country code', :sort =>"country_code" %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shopmia.each do |shopmium| %>
+      <tr>
+        <td><%= shopmium.chain %></td>
+        <td><%= shopmium.name %></td>
+        <td><%= shopmium.latitude %></td>
+        <td><%= shopmium.longitude %></td>
+        <td><%= shopmium.address %></td>
+        <td><%= shopmium.city %></td>
+        <td><%= shopmium.zip %></td>
+        <td><%= shopmium.department %></td>
+        <td><%= shopmium.phone %></td>
+        <td><%= shopmium.country_code %></td>
+        <td><%= link_to 'Show', shopmium %></td>
+        <td><%= link_to 'Edit', edit_shopmium_path(shopmium) %></td>
+        <td><%= link_to 'Destroy', shopmium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
+<%= link_to 'New Shopmium', new_shopmium_path %>

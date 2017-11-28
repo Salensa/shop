@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  chain: MyString
+  name: MyString
+  latitude: MyString
+  longitude: MyString
+  address: MyString
+  city: MyString
+  zip: 1
+  department: MyString
+  phone: 1
+  hours: MyString
+  store_id: 1
+  is_address_computed: MyString
+  is_location_computed: MyString
+  key: MyString
+  ignored: MyString
+  ignore_reason: MyString
+  overload_chain_name: MyString
+  mandatory_coords: MyString
+  country_code: MyString
+
+two:
+  chain: MyString
+  name: MyString
+  latitude: MyString
+  longitude: MyString
+  address: MyString
+  city: MyString
+  zip: 1
+  department: MyString
+  phone: 1
+  hours: MyString
+  store_id: 1
+  is_address_computed: MyString
+  is_location_computed: MyString
+  key: MyString
+  ignored: MyString
+  ignore_reason: MyString
+  overload_chain_name: MyString
+  mandatory_coords: MyString
+  country_code: MyString
